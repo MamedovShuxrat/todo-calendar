@@ -40,7 +40,7 @@
     }
 
     .modalBtnClose {
-        background: url("./close-circle.svg") center/cover;
+        background: url("/close-circle.svg") center/cover;
         border: none;
         cursor: pointer;
         width: 25px;
@@ -50,7 +50,7 @@
         transition: all .3s ease-in-out;
 
         &:hover {
-            background: url("./close-circle-hover.svg") center/cover;
+            background: url("/close-circle-hover.svg") center/cover;
 
             -webkit-transform: scale(1.1);
             -ms-transform: scale(1.1);
