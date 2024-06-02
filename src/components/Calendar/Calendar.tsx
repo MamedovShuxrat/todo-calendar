@@ -39,8 +39,6 @@ export const Calendar = () => {
 
     return (
         <div className={styles.calendarContainer}>
-            <h1 className={styles.calendarTitle}>Welcome to ToDo-Calendar</h1>
-
             <header className={styles.header}>
                 <button className={styles.headerBtn} onClick={handlePrevMonth}>
                     <img src="./arrow-left.svg" alt="arrow-left" />
@@ -50,35 +48,37 @@ export const Calendar = () => {
                     <img style={{ transform: 'rotate(180deg)' }} src="./arrow-left.svg" alt="arrow-right" />
                 </button>
             </header>
-            <div className={styles.weekDays}>
-                {weekDays.map((day) => (
-                    <div key={day}
-                        className={`${styles.weekDay} ${day === 'Sunday' || day === 'Saturday' ? styles.weekendDay : ''}`}>
-                        {day}
-                    </div>
-                ))}
-            </div>
-            <div className={styles.calendar}>
-                {emptyDays.map((_, index) => (
-                    <div key={index} className={styles.emptyDay}></div>
-                ))}
-                {days.map(day => (
-                    <Day
-                        key={day.toString()}
-                        day={day.getDate()}
-                        isWeekend={isWeekend(day)}
-                        hasTasks={hasTasksForDate(day)}
-                        onClick={() => setSelectedDate(day)}
+            <main>
+                <div className={styles.weekDays}>
+                    {weekDays.map((day) => (
+                        <div key={day}
+                            className={`${styles.weekDay} ${day === 'Sunday' || day === 'Saturday' ? styles.weekendDay : ''}`}>
+                            {day}
+                        </div>
+                    ))}
+                </div>
+                <div className={styles.calendar}>
+                    {emptyDays.map((_, index) => (
+                        <div key={index} className={styles.emptyDay}></div>
+                    ))}
+                    {days.map(day => (
+                        <Day
+                            key={day.toString()}
+                            day={day.getDate()}
+                            isWeekend={isWeekend(day)}
+                            hasTasks={hasTasksForDate(day)}
+                            onClick={() => setSelectedDate(day)}
+                        />
+                    ))}
+                </div>
+                {selectedDate && (
+                    <Modal
+                        date={selectedDate}
+                        onClose={() => setSelectedDate(null)}
+                        tasks={getTasksForDate(selectedDate)}
                     />
-                ))}
-            </div>
-            {selectedDate && (
-                <Modal
-                    date={selectedDate}
-                    onClose={() => setSelectedDate(null)}
-                    tasks={getTasksForDate(selectedDate)}
-                />
-            )}
+                )}
+            </main>
         </div>
     );
 };

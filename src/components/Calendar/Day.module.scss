@@ -18,3 +18,10 @@
 .weekend {
     background-color: #ffe6e6;
 }
+
+@media (max-width: 525px) {
+    .day {
+        padding: 10px;
+        font-weight: 500;
+    }
+}
