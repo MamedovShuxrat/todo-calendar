@@ -13,10 +13,21 @@
         font-weight: 700;
 
     }
+
+    .today {
+        background-color: #a0eef9;
+
+    }
 }
 
 .weekend {
     background-color: #ffe6e6;
+}
+
+.today {
+    background-color: #a0eef9;
+    font-weight: 700;
+
 }
 
 @media (max-width: 525px) {

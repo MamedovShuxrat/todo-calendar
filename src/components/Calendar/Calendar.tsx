@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Day } from './Day';
 import { Modal } from '../Modal/Modal';
-import { format, startOfMonth, endOfMonth, eachDayOfInterval, addMonths, subMonths, getDay, isWeekend } from 'date-fns';
+import { format, startOfMonth, endOfMonth, eachDayOfInterval, addMonths, subMonths, getDay, isWeekend, isToday } from 'date-fns';
 import { useTaskContext } from '../../contexts/TaskContext';
 import styles from './Calendar.module.scss';
 
@@ -66,6 +66,7 @@ export const Calendar = () => {
                             key={day.toString()}
                             day={day.getDate()}
                             isWeekend={isWeekend(day)}
+                            isToday={isToday(day)}
                             hasTasks={hasTasksForDate(day)}
                             onClick={() => setSelectedDate(day)}
                         />

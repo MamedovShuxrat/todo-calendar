@@ -40,11 +40,9 @@
     }
 
     .modalBtnClose {
-        border-radius: 10px;
+        background: url("./close-circle.svg") center/cover;
+        border: none;
         cursor: pointer;
-        border: 2px solid rgb(87, 170, 228);
-        color: rgb(87, 170, 228);
-        background: inherit;
         width: 25px;
         height: 25px;
         -webkit-transition: all .3s ease-in-out;
@@ -52,11 +50,11 @@
         transition: all .3s ease-in-out;
 
         &:hover {
-            border: 2px solid rgb(255, 0, 0);
-            color: rgb(255, 0, 0);
+            background: url("./close-circle-hover.svg") center/cover;
+
             -webkit-transform: scale(1.1);
             -ms-transform: scale(1.1);
-            transform: scale(1.1);
+            transform: rotate(360deg);
         }
     }
 

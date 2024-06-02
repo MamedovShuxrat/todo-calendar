@@ -37,7 +37,7 @@ export const Modal = ({ date, onClose }: ModalProps) => {
             <div className={styles.modalContent}>
                 <div className={styles.modalTitleWrapper}>
                     <h2>Tasks for <span className={styles.modalAccentDate}>{format(date, 'd MMMM')}</span></h2>
-                    <button className={styles.modalBtnClose} onClick={onClose}>X</button>
+                    <button className={styles.modalBtnClose} onClick={onClose}></button>
                 </div>
                 <ul className={styles.tasks}>
                     {(tasks[dayString] || []).map(task => (
@@ -60,19 +60,26 @@ export const Modal = ({ date, onClose }: ModalProps) => {
                     ))}
                 </ul>
                 <div className={styles.tasksAddWrapper}>
-                    <input
-                        className={styles.tasksAddInput}
-                        placeholder='Write a task'
-                        type="text"
-                        value={taskText}
-                        onChange={(e) => setTaskText(e.target.value)}
-                    />
-                    <button
-                        className={styles.tasksAddBtn}
-                        onClick={handleAddTask}
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            handleAddTask();
+                        }}
                     >
-                        Add Task
-                    </button>
+                        <input
+                            className={styles.tasksAddInput}
+                            placeholder='Write a task'
+                            type="text"
+                            value={taskText}
+                            onChange={(e) => setTaskText(e.target.value)}
+                        />
+                        <button
+                            type='submit'
+                            className={styles.tasksAddBtn}
+                        >
+                            Add Task
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
