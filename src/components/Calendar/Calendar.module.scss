@@ -1,19 +1,53 @@
 .calendarContainer {
+    margin: 10px auto 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 500px;
+
 }
+
+.calendarTitle {}
 
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding: 10px;
+    column-gap: 50px;
+}
+
+.headerBtn {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid rgb(87, 170, 228);
+    background: inherit;
+}
+
+.weekDays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.weekendDay {
+    color: red;
+}
+
+.weekDay {
+    font-weight: bold;
 }
 
 .calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    gap: 7px;
+}
+
+.emptyDay {
+    background-color: transparent;
 }

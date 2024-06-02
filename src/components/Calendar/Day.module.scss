@@ -1,7 +1,17 @@
 .day {
     background-color: #f0f0f0;
-    border: 1px solid #ddd;
+    border: 1px solid #a8a8c6a1;
     padding: 20px;
     text-align: center;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
+
+    &.hasTasks {
+        background-color: rgb(87, 170, 228);
+    }
+}
+
+.weekend {
+    background-color: #ffe6e6;
 }
