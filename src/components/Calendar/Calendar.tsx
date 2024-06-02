@@ -5,7 +5,7 @@ import { format, startOfMonth, endOfMonth, eachDayOfInterval, addMonths, subMont
 import { useTaskContext } from '../../contexts/TaskContext';
 import styles from './Calendar.module.scss';
 
-const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export const Calendar = () => {
     const [currentDate, setCurrentDate] = useState(new Date());
@@ -53,7 +53,7 @@ export const Calendar = () => {
             <div className={styles.weekDays}>
                 {weekDays.map((day) => (
                     <div key={day}
-                        className={`${styles.weekDay} ${day === 'Sun' || day === 'Sat' ? styles.weekendDay : ''}`}>
+                        className={`${styles.weekDay} ${day === 'Sunday' || day === 'Saturday' ? styles.weekendDay : ''}`}>
                         {day}
                     </div>
                 ))}
